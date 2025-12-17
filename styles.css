@@ -501,4 +501,32 @@ body {
     align-items: flex-start;
   }
 }
+  .pricing-table-wrapper {
+  margin-top: 18px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 1px solid var(--border-subtle);
+  padding: 8px;
+}
+
+.pricing-table th {
+  background: #111111;
+  text-align: left;
+}
+
+.pricing-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+
 
