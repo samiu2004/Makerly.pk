@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Freelancer Profile – Markerly.pk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Shared Navbar -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="logo-m">M</span>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title" data-i18n="brandName">Makerly</span>
+          <span class="logo-subtitle" data-i18n="brandTagline">Local Talent First</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="freelancers.html" data-i18n="navBrowse">Browse freelancers</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+        <a href="how-it-works.html" data-i18n="navHowItWorks">How it works</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-secondary" data-i18n="navBecomeFreelancer">
+          Become a freelancer
+        </button>
+        <button class="btn-primary" data-i18n="navJoin">Join</button>
+
+        <div class="toggle-group">
+          <button id="langToggle" class="toggle-btn">EN / اردو</button>
+          <button id="currencyToggle" class="toggle-btn">PKR / USD</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile content -->
+  <section class="section">
+    <div class="profile-layout">
+      <!-- Left: main info -->
+      <div class="profile-main">
+        <div class="profile-header">
+          <div class="profile-avatar"></div>
+          <div>
+            <h1 id="profileName">Freelancer Name</h1>
+            <p id="profileRole" class="profile-role">Role / Category</p>
+            <p class="profile-rating" id="profileRating">★ 4.8 | 32 orders</p>
+          </div>
+        </div>
+
+        <div class="profile-badges">
+          <span id="profileCategory">Logo & Brand Design</span>
+          <span id="profileLocation">Karachi, Pakistan</span>
+          <span id="profileExperience">2+ years experience</span>
+        </div>
+
+        <div class="profile-about">
+          <h2 data-i18n="profileAboutTitle">About this freelancer</h2>
+          <p id="profileAbout">
+            Short bio about the freelancer will be loaded here based on the selected profile.
+          </p>
+        </div>
+
+        <div class="profile-services">
+          <h2 data-i18n="profileServicesTitle">Services offered</h2>
+          <ul id="profileServices">
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+          </ul>
+        </div>
+
+        <div class="profile-reviews">
+          <h2 data-i18n="profileReviewsTitle">Recent feedback</h2>
+          <div id="profileReviews">
+            <p class="review-text">
+              “Great communication and quality of work. Highly recommended for student startups.”
+            </p>
+            <p class="review-meta">– Example client feedback</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: pricing + actions -->
+      <aside class="profile-sidebar">
+        <div class="profile-card">
+          <h3 data-i18n="profileStartingAt">Starting at</h3>
+          <p class="profile-price" id="profilePrice" data-price-pkr="8000"></p>
+          <p class="profile-note" data-i18n="profilePriceNote">
+            Final price depends on project scope and delivery time.
+          </p>
+          <button class="btn-primary profile-btn" data-i18n="profileContactBtn">
+            Contact this freelancer
+          </button>
+          <button class="btn-secondary profile-btn" data-i18n="profileOrderBtn">
+            Request a custom offer
+          </button>
+        </div>
+
+        <div class="profile-card">
+          <h3 data-i18n="profileHighlightsTitle">Highlights</h3>
+          <ul class="profile-highlights" id="profileHighlights">
+            <li>100% on-time delivery (sample)</li>
+            <li>Friendly communication</li>
+            <li>Ideal for student and small business projects</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-heading" data-i18n="footerMakerly">Markerly.pk</p>
+        <p class="footer-text" data-i18n="footerOwned">
+          Designed and owned by Students of IBA.
+        </p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerLinks">Quick links</p>
+        <p class="footer-text"><a href="freelancers.html" data-i18n="footerBrowse">Browse freelancers</a></p>
+        <p class="footer-text"><a href="pricing.html" data-i18n="footerPricing">Commission & pricing</a></p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerCategories">Core categories</p>
+        <p class="footer-text"><a href="index.html#coreCategories" data-i18n="footerSeeCategories">See all categories</a></p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerContact">Contact</p>
+        <p class="footer-text">contact@makerly.com</p>
+        <p class="footer-text">042-7466555</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Markerly.pk · Prototype for academic purposes only.</p>
+    </div>
+  </footer>
+
+  <!-- Floating widget -->
+  <div class="floating-widget">
+    <button class="floating-btn">⚙</button>
+    <div class="floating-panel">
+      <p data-i18n="widgetTitle">Quick settings</p>
+      <button id="widgetLangToggle" class="toggle-btn">EN / اردو</button>
+      <button id="widgetCurrencyToggle" class="toggle-btn">PKR / USD</button>
+      <a href="contact.html" data-i18n="widgetContact">Contact us</a>
+      <a href="how-it-works.html" data-i18n="widgetHowItWorks">How it works</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Simple profile data map (10 professional profiles)
+    const profiles = {
+      1: {
+        name: "Ali Raza",
+        role: "Logo & Brand Designer",
+        rating: "★ 4.8 | 32 orders",
+        category: "Logo & Brand Design",
+        location: "Karachi, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 8000,
+        about:
+          "Ali is a student brand designer who creates clear, modern logos and starter brand kits for small businesses and student-led startups.",
+        services: [
+          "Logo design with 2–3 concepts",
+          "Basic brand kit (logo, colors, fonts)",
+          "Social media profile and cover images"
+        ],
+        highlights: [
+          "Strong understanding of student and local brands",
+          "Delivers simple, clean brand identities",
+          "Perfect for first-time business owners"
+        ],
+        review:
+          "Ali understood our idea quickly and delivered a logo that looks professional and simple.",
+        reviewMeta: "– Local café owner"
+      },
+      2: {
+        name: "Fatima Khan",
+        role: "Social Media Content Designer",
+        rating: "★ 4.7 | 41 orders",
+        category: "Social Media Content",
+        location: "Lahore, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 6000,
+        about:
+          "Fatima designs social media content for youth and student brands, focusing on clear messaging, simple layouts, and scroll-stopping covers.",
+        services: [
+          "Carousel posts for Instagram",
+          "Reel and short video thumbnails",
+          "Post templates you can reuse in Canva"
+        ],
+        highlights: [
+          "Focus on Instagram and TikTok audiences",
+          "Understands student-led marketing needs",
+          "Simple language and easy handover"
+        ],
+        review:
+          "Our engagement improved after using Fatima’s carousel designs for our student society events.",
+        reviewMeta: "– University society"
+      },
+      3: {
+        name: "Hasnain Ahmed",
+        role: "Web & Landing Page Developer",
+        rating: "★ 4.9 | 27 orders",
+        category: "Web & Landing Pages",
+        location: "Karachi, Pakistan",
+        experience: "3+ years experience",
+        pricePKR: 15000,
+        about:
+          "Hasnain develops fast, responsive landing pages and simple websites using clean HTML, CSS, and JavaScript, ideal for student startups and early-stage projects.",
+        services: [
+          "One-page responsive landing site",
+          "Multi-section startup landing page",
+          "Basic portfolio website for students"
+        ],
+        highlights: [
+          "Mobile-first design approach",
+          "Lightweight, no heavy frameworks",
+          "Good for MVP and pitch/demo sites"
+        ],
+        review:
+          "The landing page Hasnain made for our project looked like a real startup website and worked well on mobile.",
+        reviewMeta: "– Final year group project"
+      },
+      4: {
+        name: "Maryam Siddiqui",
+        role: "Content & Copywriter",
+        rating: "★ 4.6 | 38 orders",
+        category: "Content & Copywriting",
+        location: "Islamabad, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 5000,
+        about:
+          "Maryam writes simple, clear content in both English and Urdu, helping small brands explain their stories and offers without complicated words.",
+        services: [
+          "Website and landing page copy",
+          "Product descriptions for online stores",
+          "Blog and article writing (English/Urdu)"
+        ],
+        highlights: [
+          "Bilingual content (EN/Urdu)",
+          "Easy-to-understand language",
+          "Best for local Pakistani brands"
+        ],
+        review:
+          "Her bilingual content helped us talk to both English and Urdu speaking customers easily.",
+        reviewMeta: "– Online clothing store"
+      },
+      5: {
+        name: "Usman Malik",
+        role: "Video Editor",
+        rating: "★ 4.7 | 24 orders",
+        category: "Video & Editing",
+        location: "Rawalpindi, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 9000,
+        about:
+          "Usman edits short-form videos and intros with clean cuts, captions, and basic motion graphics suited for social media marketing.",
+        services: [
+          "TikTok and Reels edit with captions",
+          "YouTube intro and outro videos",
+          "Short promo videos for small businesses"
+        ],
+        highlights: [
+          "Understands vertical-video trends",
+          "Keeps edits clean and on-brand",
+          "Fast turnaround for campaigns"
+        ],
+        review:
+          "Our reels looked much more polished and professional after working with Usman.",
+        reviewMeta: "– Café social media manager"
+      },
+      6: {
+        name: "Ayesha Noor",
+        role: "AI & Automation Assistant",
+        rating: "★ 4.8 | 19 orders",
+        category: "AI & Automation",
+        location: "Karachi, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 12000,
+        about:
+          "Ayesha helps small teams set up AI prompts, chat-based support, and simple automations to save time on repetitive tasks.",
+        services: [
+          "Prompt design for chatbots and assistants",
+          "Simple automation workflows (e.g., emails, forms)",
+          "AI-assisted content with human review"
+        ],
+        highlights: [
+          "Explains AI in simple language",
+          "Focus on safe and ethical use",
+          "Great fit for small teams and students"
+        ],
+        review:
+          "Her automation ideas saved us hours in manual work every week.",
+        reviewMeta: "– Student-led ecommerce store"
+      },
+      7: {
+        name: "Bilal Sheikh",
+        role: "SEO & Site Optimizer",
+        rating: "★ 4.5 | 21 orders",
+        category: "SEO & Performance",
+        location: "Lahore, Pakistan",
+        experience: "3+ years experience",
+        pricePKR: 7000,
+        about:
+          "Bilal performs basic SEO audits and improves on-page structure so small websites can appear better in search results.",
+        services: [
+          "On-page SEO audit and checklist",
+          "Meta titles and descriptions",
+          "Basic performance and speed improvements"
+        ],
+        highlights: [
+          "Focus on small business websites",
+          "Easy-to-follow SEO recommendations",
+          "Beginner-friendly explanations"
+        ],
+        review:
+          "Our website traffic gradually increased after implementing Bilal’s SEO suggestions.",
+        reviewMeta: "– Tuition center website"
+      },
+      8: {
+        name: "Sana Javed",
+        role: "Virtual Assistant",
+        rating: "★ 4.6 | 35 orders",
+        category: "Virtual Assistance",
+        location: "Faisalabad, Pakistan",
+        experience: "2+ years experience",
+        pricePKR: 4000,
+        about:
+          "Sana supports busy founders and students with email replies, research, and simple admin tasks to keep work organised.",
+        services: [
+          "Inbox and calendar management",
+          "Online research and data collection",
+          "Basic document and sheet formatting"
+        ],
+        highlights: [
+          "Soft and professional communication style",
+          "Understands student and startup needs",
+          "Good for long-term support"
+        ],
+        review:
+          "Sana helped me manage my inbox during a very busy semester and project deadlines.",
+        reviewMeta: "– University student"
+      },
+      9: {
+        name: "Hira Saeed",
+        role: "Design & Tools Tutor",
+        rating: "★ 4.9 | 29 orders",
+        category: "Tutoring & Training",
+        location: "Karachi, Pakistan",
+        experience: "3+ years experience",
+        pricePKR: 3000,
+        about:
+          "Hira teaches design tools like Canva and Figma in very simple language, focusing on practical skills and small projects.",
+        services: [
+          "1:1 Canva basics session",
+          "Figma for beginner UI design",
+          "Project-based design learning for students"
+        ],
+        highlights: [
+          "Explains slowly and clearly",
+          "Assignments and practical exercises",
+          "Perfect for beginners and non-designers"
+        ],
+        review:
+          "Her sessions made Figma feel easy and less scary for me as a beginner.",
+        reviewMeta: "– First-time design learner"
+      },
+      10: {
+        name: "Ahmad Farooq",
+        role: "Brand & Strategy Consultant",
+        rating: "★ 4.7 | 18 orders",
+        category: "Brand & Strategy",
+        location: "Lahore, Pakistan",
+        experience: "3+ years experience",
+        pricePKR: 14000,
+        about:
+          "Ahmad helps small brands clarify their message, audience, and launch plan using simple frameworks and workshops.",
+        services: [
+          "Brand positioning and tagline workshop",
+          "Simple messaging guide for websites and socials",
+          "Go-to-market launch checklist"
+        ],
+        highlights: [
+          "Breaks strategy into simple steps",
+          "Useful for new or rebranding projects",
+          "Understands Pakistani consumer context"
+        ],
+        review:
+          "His brand workshop gave our team clarity and a clear direction for our next semester launch.",
+        reviewMeta: "– Student startup team"
+      }
+    };
+
+    function getProfileIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id");
+    }
+
+    function loadProfile() {
+      const id = getProfileIdFromURL() || "1";
+      const profile = profiles[id];
+      if (!profile) return;
+
+      document.getElementById("profileName").textContent = profile.name;
+      document.getElementById("profileRole").textContent = profile.role;
+      document.getElementById("profileRating").textContent = profile.rating;
+      document.getElementById("profileCategory").textContent = profile.category;
+      document.getElementById("profileLocation").textContent = profile.location;
+      document.getElementById("profileExperience").textContent = profile.experience;
+
+      const priceEl = document.getElementById("profilePrice");
+      priceEl.setAttribute("data-price-pkr", profile.pricePKR);
+
+      document.getElementById("profileAbout").textContent = profile.about;
+
+      const servicesList = document.getElementById("profileServices");
+      servicesList.innerHTML = "";
+      profile.services.forEach((s) => {
+        const li = document.createElement("li");
+        li.textContent = s;
+        servicesList.appendChild(li);
+      });
+
+      const highlightsList = document.getElementById("profileHighlights");
+      highlightsList.innerHTML = "";
+      profile.highlights.forEach((h) => {
+        const li = document.createElement("li");
+        li.textContent = h;
+        highlightsList.appendChild(li);
+      });
+
+      const reviewsContainer = document.getElementById("profileReviews");
+      reviewsContainer.innerHTML = "";
+      const p1 = document.createElement("p");
+      p1.className = "review-text";
+      p1.textContent = profile.review;
+      const p2 = document.createElement("p");
+      p2.className = "review-meta";
+      p2.textContent = profile.reviewMeta;
+      reviewsContainer.appendChild(p1);
+      reviewsContainer.appendChild(p2);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadProfile();
+    });
+  </script>
+</body>
+</html>
