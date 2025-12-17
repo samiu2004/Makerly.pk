@@ -356,3 +356,149 @@ body {
 
 .category-card p {
   font
+/* Browse hero / search */
+
+.browse-hero {
+  margin-top: 20px;
+}
+
+.browse-hero-inner {
+  border-radius: 22px;
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top left, rgba(255, 204, 0, 0.1), #050505);
+  padding: 16px;
+}
+
+.browse-hero-inner h1 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.browse-hero-inner p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.browse-search {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.browse-search-main input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: #050505;
+  color: var(--text-main);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.browse-search-main input::placeholder {
+  color: #777777;
+}
+
+.browse-search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.browse-search-filters select {
+  background: #050505;
+  color: var(--text-main);
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.browse-search-btn {
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+/* Freelancers horizontal list */
+
+.freelancers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.freelancer-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1.5fr) minmax(0, 0.9fr);
+  gap: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, #121212, #050505);
+  padding: 12px;
+}
+
+.freelancer-row-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.freelancer-row-center {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.freelancer-row-header h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.freelancer-row-header .freelancer-role {
+  margin-top: 2px;
+}
+
+.freelancer-row-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.freelancer-row-rating {
+  color: var(--accent-soft);
+}
+
+.freelancer-row-price-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.freelancer-row-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.freelancer-row-btn {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+/* Responsive for horizontal cards */
+
+@media (max-width: 700px) {
+  .freelancer-row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: flex-start;
+  }
+
+  .freelancer-row-right {
+    align-items: flex-start;
+  }
+}
+
