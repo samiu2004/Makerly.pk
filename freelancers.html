@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Shared Navbar (same as index) -->
+  <!-- Shared Navbar -->
   <header class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">
@@ -42,338 +42,371 @@
     </div>
   </header>
 
-  <!-- Filters -->
-  <section class="section">
-    <div class="section-header">
-      <h1 style="font-size:22px; margin-bottom:6px;" data-i18n="browseTitle">
-        Browse freelancers
-      </h1>
-      <p data-i18n="browseSubtitle">
-        Find student creators by category, price, and rating.
-      </p>
-    </div>
+  <!-- Browse Hero / Search -->
+  <section class="section browse-hero">
+    <div class="browse-hero-inner">
+      <div>
+        <h1 data-i18n="browseTitle">Find the right student creator for your project</h1>
+        <p data-i18n="browseSubtitle">
+          Search by skill, category, or simple keywords. All freelancers are students or emerging professionals from Pakistan.
+        </p>
+      </div>
+      <form class="browse-search" onsubmit="event.preventDefault();">
+        <div class="browse-search-main">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="What service are you looking for?"
+          />
+        </div>
+        <div class="browse-search-filters">
+          <select id="filterCategory">
+            <option value="all" data-i18n="filterAll">All categories</option>
+            <option value="design" data-i18n="catDesign">Logo & Brand Design</option>
+            <option value="social" data-i18n="catSocial">Social Media Content</option>
+            <option value="web" data-i18n="catWeb">Web & Landing Pages</option>
+            <option value="content" data-i18n="catContent">Content & Copywriting</option>
+            <option value="video" data-i18n="catVideo">Video & Editing</option>
+            <option value="ai" data-i18n="catAI">AI & Automation</option>
+            <option value="seo" data-i18n="catSEO">SEO & Performance</option>
+            <option value="va" data-i18n="catVA">Virtual Assistance</option>
+            <option value="tutoring" data-i18n="catTutoring">Tutoring & Training</option>
+            <option value="brand" data-i18n="catBrand">Brand & Strategy</option>
+          </select>
 
-    <div class="filters-bar">
-      <select id="filterCategory">
-        <option value="all" data-i18n="filterAll">All categories</option>
-        <option value="design" data-i18n="catDesign">Logo & Brand Design</option>
-        <option value="social" data-i18n="catSocial">Social Media Content</option>
-        <option value="web" data-i18n="catWeb">Web & Landing Pages</option>
-        <option value="content" data-i18n="catContent">Content & Copywriting</option>
-        <option value="video" data-i18n="catVideo">Video & Editing</option>
-        <option value="ai" data-i18n="catAI">AI & Automation</option>
-        <option value="seo" data-i18n="catSEO">SEO & Performance</option>
-        <option value="va" data-i18n="catVA">Virtual Assistance</option>
-        <option value="tutoring" data-i18n="catTutoring">Tutoring & Training</option>
-        <option value="brand" data-i18n="catBrand">Brand & Strategy</option>
-      </select>
+          <select id="filterPrice">
+            <option value="all" data-i18n="filterPriceAll">Any price</option>
+            <option value="low" data-i18n="filterPriceLow">Up to 5,000 PKR</option>
+            <option value="mid" data-i18n="filterPriceMid">5,001 – 15,000 PKR</option>
+            <option value="high" data-i18n="filterPriceHigh">15,001+ PKR</option>
+          </select>
 
-      <select id="filterPrice">
-        <option value="all" data-i18n="filterPriceAll">Any price</option>
-        <option value="low" data-i18n="filterPriceLow">Up to 5,000 PKR</option>
-        <option value="mid" data-i18n="filterPriceMid">5,001 – 15,000 PKR</option>
-        <option value="high" data-i18n="filterPriceHigh">15,001+ PKR</option>
-      </select>
+          <select id="filterRating">
+            <option value="all" data-i18n="filterRatingAll">Any rating</option>
+            <option value="4" data-i18n="filterRating4">4.0+ stars</option>
+            <option value="4.5" data-i18n="filterRating45">4.5+ stars</option>
+          </select>
 
-      <select id="filterRating">
-        <option value="all" data-i18n="filterRatingAll">Any rating</option>
-        <option value="4" data-i18n="filterRating4">4.0+ stars</option>
-        <option value="4.5" data-i18n="filterRating45">4.5+ stars</option>
-      </select>
+          <button class="btn-primary browse-search-btn" data-i18n="filterApply">
+            Apply filters
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 
-  <!-- Freelancers grid -->
+  <!-- Freelancers list (horizontal cards) -->
   <section class="section">
-    <div class="freelancers-grid">
+    <div id="freelancersList" class="freelancers-list">
+      <!-- Cards are identical in data to before, only layout changed -->
       <!-- 1. Logo & Brand Design -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="design"
                data-rating="4.8"
                data-price-pkr="8000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-1"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Ali Raza</h3>
             <p class="freelancer-role">Logo & Brand Designer</p>
           </div>
+          <p class="freelancer-desc">
+            Student brand designer creating clean, modern logos and starter brand kits
+            for small businesses and startups.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Logo</span><span>#BrandKit</span><span>#BusinessCard</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Student brand designer creating clean, modern logos and starter brand kits
-          for small businesses and startups.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.8 | 32 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="8000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.8 · 32 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="8000"></p>
+          <a href="profile.html?id=1" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Logo</span><span>#BrandKit</span><span>#BusinessCard</span>
-        </div>
-        <a href="profile.html?id=1" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 2. Social Media Content -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="social"
                data-rating="4.7"
                data-price-pkr="6000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-2"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Fatima Khan</h3>
             <p class="freelancer-role">Social Media Content Designer</p>
           </div>
+          <p class="freelancer-desc">
+            Designs carousels, post templates, and reel covers for Instagram and TikTok
+            with a strong focus on student and youth brands.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Instagram</span><span>#TikTok</span><span>#Canva</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Designs carousels, post templates, and reel covers for Instagram and TikTok
-          with a strong focus on student and youth brands.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.7 | 41 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="6000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.7 · 41 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="6000"></p>
+          <a href="profile.html?id=2" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Instagram</span><span>#TikTok</span><span>#Canva</span>
-        </div>
-        <a href="profile.html?id=2" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 3. Web & Landing Pages -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="web"
                data-rating="4.9"
                data-price-pkr="15000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-3"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Hasnain Ahmed</h3>
             <p class="freelancer-role">Web & Landing Page Developer</p>
           </div>
+          <p class="freelancer-desc">
+            Builds fast, responsive landing pages and simple websites using HTML, CSS,
+            and basic JavaScript – perfect for student startups.
+          </p>
+          <div class="freelancer-tags">
+            <span>#LandingPage</span><span>#Responsive</span><span>#HTMLCSS</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Builds fast, responsive landing pages and simple websites using HTML, CSS,
-          and basic JavaScript – perfect for student startups.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.9 | 27 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="15000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.9 · 27 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="15000"></p>
+          <a href="profile.html?id=3" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#LandingPage</span><span>#Responsive</span><span>#HTMLCSS</span>
-        </div>
-        <a href="profile.html?id=3" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 4. Content & Copywriting -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="content"
                data-rating="4.6"
                data-price-pkr="5000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-4"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Maryam Siddiqui</h3>
             <p class="freelancer-role">Content & Copywriter</p>
           </div>
+          <p class="freelancer-desc">
+            Writes simple, clear blog posts, website copy, and product descriptions
+            for Pakistani brands in English and Urdu.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Blog</span><span>#ProductCopy</span><span>#Bilingual</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Writes simple, clear blog posts, website copy, and product descriptions
-          for Pakistani brands in English and Urdu.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.6 | 38 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="5000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.6 · 38 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="5000"></p>
+          <a href="profile.html?id=4" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Blog</span><span>#ProductCopy</span><span>#Bilingual</span>
-        </div>
-        <a href="profile.html?id=4" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 5. Video & Editing -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="video"
                data-rating="4.7"
                data-price-pkr="9000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-5"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Usman Malik</h3>
             <p class="freelancer-role">Video Editor</p>
           </div>
+          <p class="freelancer-desc">
+            Edits short-form videos, YouTube intros, and TikTok reels with smooth
+            transitions and captions for better engagement.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Reels</span><span>#YouTube</span><span>#CapCut</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Edits short-form videos, YouTube intros, and TikTok reels with smooth
-          transitions and captions for better engagement.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.7 | 24 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="9000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.7 · 24 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="9000"></p>
+          <a href="profile.html?id=5" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Reels</span><span>#YouTube</span><span>#CapCut</span>
-        </div>
-        <a href="profile.html?id=5" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 6. AI & Automation -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="ai"
                data-rating="4.8"
                data-price-pkr="12000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-6"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Ayesha Noor</h3>
             <p class="freelancer-role">AI & Automation Assistant</p>
           </div>
+          <p class="freelancer-desc">
+            Helps small teams set up AI prompts, basic chatbots, and simple
+            automation flows to save time and reduce manual work.
+          </p>
+          <div class="freelancer-tags">
+            <span>#AIprompts</span><span>#Automation</span><span>#NoCode</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Helps small teams set up AI prompts, basic chatbots, and simple
-          automation flows to save time and reduce manual work.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.8 | 19 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="12000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.8 · 19 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="12000"></p>
+          <a href="profile.html?id=6" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#AIprompts</span><span>#Automation</span><span>#NoCode</span>
-        </div>
-        <a href="profile.html?id=6" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 7. SEO & Performance -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="seo"
                data-rating="4.5"
                data-price-pkr="7000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-7"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Bilal Sheikh</h3>
             <p class="freelancer-role">SEO & Site Optimizer</p>
           </div>
+          <p class="freelancer-desc">
+            Performs basic SEO audits, improves on-page tags, and speeds up small
+            business websites for better search visibility.
+          </p>
+          <div class="freelancer-tags">
+            <span>#SEOAudit</span><span>#OnPage</span><span>#Speed</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Performs basic SEO audits, improves on-page tags, and speeds up small
-          business websites for better search visibility.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.5 | 21 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="7000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.5 · 21 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="7000"></p>
+          <a href="profile.html?id=7" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#SEOAudit</span><span>#OnPage</span><span>#Speed</span>
-        </div>
-        <a href="profile.html?id=7" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 8. Virtual Assistance -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="va"
                data-rating="4.6"
                data-price-pkr="4000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-8"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Sana Javed</h3>
             <p class="freelancer-role">Virtual Assistant</p>
           </div>
+          <p class="freelancer-desc">
+            Handles email replies, basic research, and scheduling tasks so small
+            business owners can focus on important work.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Email</span><span>#Research</span><span>#Admin</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Handles email replies, basic research, and scheduling tasks so small
-          business owners can focus on important work.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.6 | 35 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="4000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.6 · 35 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="4000"></p>
+          <a href="profile.html?id=8" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Email</span><span>#Research</span><span>#Admin</span>
-        </div>
-        <a href="profile.html?id=8" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 9. Tutoring & Training -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="tutoring"
                data-rating="4.9"
                data-price-pkr="3000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-9"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Hira Saeed</h3>
             <p class="freelancer-role">Design & Tools Tutor</p>
           </div>
+          <p class="freelancer-desc">
+            Teaches Canva, Figma, and basic design principles in simple language,
+            ideal for beginners and student entrepreneurs.
+          </p>
+          <div class="freelancer-tags">
+            <span>#Canva</span><span>#Figma</span><span>#BeginnerFriendly</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Teaches Canva, Figma, and basic design principles in simple language,
-          ideal for beginners and student entrepreneurs.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.9 | 29 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="3000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.9 · 29 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="3000"></p>
+          <a href="profile.html?id=9" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#Canva</span><span>#Figma</span><span>#BeginnerFriendly</span>
-        </div>
-        <a href="profile.html?id=9" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
 
       <!-- 10. Brand & Strategy -->
-      <article class="freelancer-card"
+      <article class="freelancer-row"
                data-category="brand"
                data-rating="4.7"
                data-price-pkr="14000">
-        <div class="freelancer-header">
+        <div class="freelancer-row-left">
           <div class="avatar avatar-10"></div>
-          <div>
+        </div>
+        <div class="freelancer-row-center">
+          <div class="freelancer-row-header">
             <h3>Ahmad Farooq</h3>
             <p class="freelancer-role">Brand & Strategy Consultant</p>
           </div>
+          <p class="freelancer-desc">
+            Helps small brands clarify their positioning, messaging, and go-to-market
+            plan using practical, student-level strategies.
+          </p>
+          <div class="freelancer-tags">
+            <span>#BrandStrategy</span><span>#Positioning</span><span>#Workshops</span>
+          </div>
         </div>
-        <p class="freelancer-desc">
-          Helps small brands clarify their positioning, messaging, and go-to-market
-          plan using practical, student-level strategies.
-        </p>
-        <div class="freelancer-meta">
-          <span class="rating">★ 4.7 | 18 orders</span>
-          <span class="price-label" data-i18n="fromPrice">From</span>
-          <span class="price" data-price-pkr="14000"></span>
+        <div class="freelancer-row-right">
+          <p class="freelancer-row-rating">★ 4.7 · 18 orders</p>
+          <p class="freelancer-row-price-label" data-i18n="fromPrice">From</p>
+          <p class="freelancer-row-price price" data-price-pkr="14000"></p>
+          <a href="profile.html?id=10" class="btn-primary freelancer-row-btn" data-i18n="viewProfile">
+            View profile
+          </a>
         </div>
-        <div class="freelancer-tags">
-          <span>#BrandStrategy</span><span>#Positioning</span><span>#Workshops</span>
-        </div>
-        <a href="profile.html?id=10" class="btn-primary freelancer-btn" data-i18n="viewProfile">
-          View profile
-        </a>
       </article>
     </div>
   </section>
@@ -407,7 +440,7 @@
     </div>
   </footer>
 
-  <!-- Floating widget (same as index) -->
+  <!-- Floating widget -->
   <div class="floating-widget">
     <button class="floating-btn">⚙</button>
     <div class="floating-panel">
@@ -421,40 +454,52 @@
 
   <script src="app.js"></script>
   <script>
-    // Simple filtering logic
     document.addEventListener("DOMContentLoaded", () => {
-      const cards = Array.from(document.querySelectorAll(".freelancer-card"));
+      const rows = Array.from(document.querySelectorAll(".freelancer-row"));
       const catSelect = document.getElementById("filterCategory");
       const priceSelect = document.getElementById("filterPrice");
       const ratingSelect = document.getElementById("filterRating");
+      const searchInput = document.getElementById("searchInput");
+      const applyBtn = document.querySelector(".browse-search-btn");
+
+      function matchesSearch(row, query) {
+        if (!query) return true;
+        const text = row.textContent.toLowerCase();
+        return text.includes(query.toLowerCase());
+      }
 
       function applyFilters() {
         const cat = catSelect.value;
         const price = priceSelect.value;
         const rating = ratingSelect.value;
+        const query = searchInput.value.trim();
 
-        cards.forEach((card) => {
-          const cardCat = card.getAttribute("data-category");
-          const cardRating = parseFloat(card.getAttribute("data-rating"));
-          const cardPrice = parseInt(card.getAttribute("data-price-pkr"), 10);
+        rows.forEach((row) => {
+          const cardCat = row.getAttribute("data-category");
+          const cardRating = parseFloat(row.getAttribute("data-rating"));
+          const cardPrice = parseInt(row.getAttribute("data-price-pkr"), 10);
 
           let visible = true;
 
           if (cat !== "all" && cardCat !== cat) visible = false;
-
           if (price === "low" && cardPrice > 5000) visible = false;
           if (price === "mid" && (cardPrice < 5001 || cardPrice > 15000)) visible = false;
           if (price === "high" && cardPrice < 15001) visible = false;
-
           if (rating !== "all" && cardRating < parseFloat(rating)) visible = false;
+          if (!matchesSearch(row, query)) visible = false;
 
-          card.style.display = visible ? "flex" : "none";
+          row.style.display = visible ? "grid" : "none";
         });
       }
 
       [catSelect, priceSelect, ratingSelect].forEach((el) =>
         el.addEventListener("change", applyFilters)
       );
+      searchInput.addEventListener("input", () => {
+        // apply filters with small delay if needed
+        applyFilters();
+      });
+      if (applyBtn) applyBtn.addEventListener("click", applyFilters);
 
       applyFilters();
     });
