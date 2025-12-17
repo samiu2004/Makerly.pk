@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing – Markerly.pk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar (same as other pages) -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><span class="logo-m">M</span></div>
+        <div class="logo-text-group">
+          <span class="logo-title" data-i18n="brandName">Makerly</span>
+          <span class="logo-subtitle" data-i18n="brandTagline">Local Talent First</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="freelancers.html" data-i18n="navBrowse">Browse freelancers</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+        <a href="how-it-works.html" data-i18n="navHowItWorks">How it works</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-secondary" data-i18n="navBecomeFreelancer">Become a freelancer</button>
+        <button class="btn-primary" data-i18n="navJoin">Join</button>
+        <div class="toggle-group">
+          <button id="langToggle" class="toggle-btn">EN / اردو</button>
+          <button id="currencyToggle" class="toggle-btn">PKR / USD</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-header">
+      <h1 style="font-size:24px;" data-i18n="pricingTitle">Simple 5% + 5% pricing</h1>
+      <p data-i18n="pricingSubtitle">
+        Markerly.pk keeps pricing easy: 5% from freelancers and 5% from businesses, with no hidden charges.
+      </p>
+    </div>
+
+    <div class="commission-grid">
+      <div class="commission-card">
+        <h3 data-i18n="pricingFreelancersTitle">For freelancers</h3>
+        <p data-i18n="pricingFreelancersDesc">
+          You keep 95% of every order. Commission is only 5% on each completed project, so more of the money stays with you.
+        </p>
+      </div>
+      <div class="commission-card">
+        <h3 data-i18n="pricingClientsTitle">For businesses</h3>
+        <p data-i18n="pricingClientsDesc">
+          A simple 5% service fee gives you access to verified student talent, secure payments, and support.
+        </p>
+      </div>
+    </div>
+
+    <div class="pricing-table-wrapper">
+      <h2 data-i18n="pricingExamplesTitle">Example orders</h2>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th data-i18n="pricingOrderValue">Order value (PKR)</th>
+            <th data-i18n="pricingFreelancerGets">Freelancer receives (95%)</th>
+            <th data-i18n="pricingClientPays">Client pays total</th>
+            <th data-i18n="pricingMarkerlyEarns">Markerly earns (10% total)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5,000 PKR</td>
+            <td>4,750 PKR</td>
+            <td>5,250 PKR</td>
+            <td>500 PKR</td>
+          </tr>
+          <tr>
+            <td>10,000 PKR</td>
+            <td>9,500 PKR</td>
+            <td>10,500 PKR</td>
+            <td>1,000 PKR</td>
+          </tr>
+          <tr>
+            <td>50,000 PKR</td>
+            <td>47,500 PKR</td>
+            <td>52,500 PKR</td>
+            <td>5,000 PKR</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pricing-note" data-i18n="pricingNote">
+        Note: Values above are examples; all amounts are shown in PKR or USD based on your currency setting.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer + widget same as others -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-heading" data-i18n="footerMakerly">Markerly.pk</p>
+        <p class="footer-text" data-i18n="footerOwned">Designed and owned by Students of IBA.</p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerLinks">Quick links</p>
+        <p class="footer-text"><a href="freelancers.html" data-i18n="footerBrowse">Browse freelancers</a></p>
+        <p class="footer-text"><a href="how-it-works.html" data-i18n="footerHowItWorks">How it works</a></p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerCategories">Core categories</p>
+        <p class="footer-text"><a href="index.html#coreCategories" data-i18n="footerSeeCategories">See all categories</a></p>
+      </div>
+      <div>
+        <p class="footer-heading" data-i18n="footerContact">Contact</p>
+        <p class="footer-text">contact@makerly.com</p>
+        <p class="footer-text">042-7466555</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Markerly.pk · Prototype for academic purposes only.</p>
+    </div>
+  </footer>
+
+  <div class="floating-widget">
+    <button class="floating-btn">⚙</button>
+    <div class="floating-panel">
+      <p data-i18n="widgetTitle">Quick settings</p>
+      <button id="widgetLangToggle" class="toggle-btn">EN / اردو</button>
+      <button id="widgetCurrencyToggle" class="toggle-btn">PKR / USD</button>
+      <a href="contact.html" data-i18n="widgetContact">Contact us</a>
+      <a href="how-it-works.html" data-i18n="widgetHowItWorks">How it works</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
